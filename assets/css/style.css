@@ -1,1 +1,64 @@
+body{
+  background-color: peachpuff;
+}
+.header {
+  background-color: peachpuff;
+  height: 10vh;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
+  border: 1px solid black;
+  margin: 5px;
+}
+.flex-container {
+  background-color: peachpuff;
+  display:flex;
+  flex-direction: row;
+  height: 90vh;
+  margin: 5px;
+}
+.game {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  width: 100%;
+  background-color: lightgreen;
+  height: 100%;
 
+}
+
+.cards {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  margin: 2px;
+}
+.statsInfo > div{
+  height: 5vh;
+  background-color: lightskyblue;
+  width: 100%;
+  border: 1px solid black;
+  margin: 5px;
+}
+.statsContainer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  width: 10%;
+}
+/*.flex-container, .front {
+  background-image: url(/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg);
+  background-color: lightblue;
+}
+
+.flex-container, .back {
+  background-image: url(/Users/Ziyaad/lfz/memory_match/assets/images/lfz-background.jpg);
+  background-color: lightcoral;
+}*/
