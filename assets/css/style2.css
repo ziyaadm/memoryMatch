@@ -18,25 +18,19 @@ body{
   margin: 5px;
 }
 .game {
+  flex-wrap: wrap;
   margin: 10px;
   border: 1px solid black;
   padding: 15px;
   width: 90%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
-.row{
-  display: flex;
-  width: 100%;
-  background-color: lightgreen;
-  height: 100%;
-
-}
-
 .cards {
+  position: relative;
   background-color: black;
-  height: 100%;
-  width: 100%;
+  height: 30%;
+  width: 15%;
   margin: 2px;
 }
 .statsInfo > div{
@@ -54,17 +48,18 @@ body{
   width: 10%;
 }
 .front {
-  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg");
-  background-repeat: no-repeat;
-}
-.back {
   background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/node-logo.png");
   background-repeat: no-repeat;
 }
+.back {
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg");
+  background-repeat: no-repeat;
+}
 .front, .back {
+  position: absolute;
   background-size: contain;
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 .hidden {
   display: none;
