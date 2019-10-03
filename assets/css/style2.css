@@ -47,15 +47,19 @@ body{
   text-align: center;
   width: 10%;
 }
-.front {
+.node {
   background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/node-logo.png");
+  background-repeat: no-repeat;
+}
+.html {
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/html-logo.png");
   background-repeat: no-repeat;
 }
 .back {
   background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg");
   background-repeat: no-repeat;
 }
-.front, .back {
+.front, .back , .node, .html{
   position: absolute;
   background-size: contain;
   height: 100%;
