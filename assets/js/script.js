@@ -15,31 +15,35 @@ function initializeApp(){
   modal = $(".modal")
   $(".cards").on("click", handleCardClick);
 }
-
 function calculateAccuracy(){
 accuracy = Math.floor((matches / attempts) * 100);
 console.log(accuracy);
 displayStats();
 //return accuracy;
 }
-
 function displayStats(){
 $(".playedNum").text(games_played);
 $(".attemptNum").text(attempts);
 $(".accuracyNum").text(accuracy);
 }
-
+function resetStats(){
+  matches = null;
+  attempts = null;
+  accuracy = null;
+  games_played++;
+  displayStats();
+  $(modal).addClass("hidden");
+  $(".back").removeClass("hidden");
+}
 function handleCardClick(event){
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
 
   if (firstCardClicked === null){
-
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
     firstCardBack = $(event.currentTarget).find(".back");
     console.log("first card clicked",firstCardClicked);
     displayStats();
-
   }else {
     secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
     secondCardBack = $(event.currentTarget).find(".back");
@@ -49,25 +53,27 @@ function handleCardClick(event){
     calculateAccuracy();
   }
 
-if(firstCardClicked === secondCardClicked){
-  console.log("card match");
-  firstCardClicked = null;
-  secondCardClicked = null;
-  matches++;
-  calculateAccuracy();
-  if (matches === max_matches) {
-    games_played++
-    displayStats();
-    $(modal).removeClass("hidden");}
-} else if (firstCardClicked === null || secondCardClicked === null) {
-  return;
-} else if (firstCardClicked !== secondCardClicked){
-  calculateAccuracy();
-  setTimeout(function(){
-    $(firstCardBack).removeClass("hidden");
-    $(secondCardBack).removeClass("hidden");
-  }, 1500);
-  firstCardClicked = null;
-  secondCardClicked = null;
+  if(firstCardClicked === secondCardClicked){
+    console.log("card match");
+    firstCardClicked = null;
+    secondCardClicked = null;
+    matches++;
+    calculateAccuracy();
+    if (matches === max_matches) {
+      games_played++
+      displayStats();
+      $(modal).removeClass("hidden");
+      $("#resetButton").on("click", resetStats);
+      }
+}  else if (firstCardClicked === null || secondCardClicked === null) {
+    return;
+}  else if (firstCardClicked !== secondCardClicked){
+    calculateAccuracy();
+    setTimeout(function(){
+      $(firstCardBack).removeClass("hidden");
+      $(secondCardBack).removeClass("hidden");
+    }, 1500);
+    firstCardClicked = null;
+    secondCardClicked = null;
+    }
   }
-}
