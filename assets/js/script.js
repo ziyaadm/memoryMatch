@@ -13,7 +13,7 @@ var accuracy = 0;
 
 function initializeApp(){
   modal = $(".modal")
-  $(".cards").on("click", handleCardClick);
+  $(".game").on("click",".cards", handleCardClick);
 }
 function calculateAccuracy(){
 accuracy = Math.floor((matches / attempts) * 100);
