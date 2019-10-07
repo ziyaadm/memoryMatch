@@ -51,6 +51,7 @@ function handleCardClick(event){
     attempts++;
     console.log(attempts);
     calculateAccuracy();
+    $(".cards").off("click");
   }
 
   if(firstCardClicked === secondCardClicked){
@@ -58,6 +59,7 @@ function handleCardClick(event){
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
+    $(".cards").on("click", handleCardClick);
     calculateAccuracy();
     if (matches === max_matches) {
       games_played++
@@ -72,8 +74,12 @@ function handleCardClick(event){
     setTimeout(function(){
       $(firstCardBack).removeClass("hidden");
       $(secondCardBack).removeClass("hidden");
+      $(".cards").on("click", handleCardClick);
     }, 1500);
     firstCardClicked = null;
     secondCardClicked = null;
+    }
+    else if (firstCardClicked === firstCardClicked){
+      return;
     }
   }
