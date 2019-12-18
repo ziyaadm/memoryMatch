@@ -1,80 +1,154 @@
 body{
-  background-color: peachpuff;
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/main assets/wallpaper/Numbani_screenshot_12.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 .header {
-  background-color: peachpuff;
   height: 8vh;
   font-size: 50px;
   font-weight: bolder;
   text-align: center;
-  border: 1px solid black;
-  margin: 5px;
+  margin: auto;
+  width: auto;
+  background: black url("/Users/Ziyaad/lfz/memory_match/assets/main assets/overwatch naslov.png") center no-repeat;
+}
+#demoFont {
+font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+font-size: 25px;
+letter-spacing: -1.4px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 400;
+font-style: normal;
+font-variant: small-caps;
+text-transform: lowercase;
 }
 .flex-container {
-  background-color: peachpuff;
   display:flex;
   flex-direction: row;
   height: 90vh;
-  margin: 5px;
+  margin: auto;
 }
 .game {
+  flex-wrap: wrap;
   margin: 10px;
-  border: 1px solid black;
   padding: 15px;
   width: 90%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-evenly;
 }
-.row{
-  display: flex;
-  width: 100%;
-  background-color: lightgreen;
-  height: 100%;
-
-}
-
 .cards {
+  position: relative;
   background-color: black;
-  height: 100%;
-  width: 100%;
-  margin: 2px;
+  height: 30%;
+  width: 15%;
+  margin: 1px;
+  border-radius: 15px;
 }
-.statsInfo > div{
+.statsInfo{
   height: 5vh;
-  background-color: lightskyblue;
   width: 100%;
-  border: 1px solid black;
-  margin: 5px;
+  margin: 0px;
+}
+.statsTitle{
+  padding:20px;
+  text-align: center;
 }
 .statsContainer {
   margin: 10px;
   padding: 10px;
-  border: 1px solid black;
   text-align: center;
   width: 10%;
 }
-.front {
-  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg");
+.modal{
+   width: 50vh;
+   height: 50vh;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -150px;
+   margin-top: -150px;
+   z-index: 1;
+   background-color: black;
+}
+.modal-content{
+  position: relative;
+  width: 100vh;
+  height: 100vh;
+  justify-content: center;
+  padding: 20px;
+  width: 50%;
+  height:50%;
+  background-image: url(
+  "/Users/Ziyaad/lfz/memory_match/assets/main assets/victory.gif");
   background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+.close-button{
+  float: right;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
+}
+.bastion{
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/2 - HEcxlo6.png");
+  background-repeat: no-repeat;
+}
+.genji {
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/4 - TNssuue.png");
+  background-repeat: no-repeat;
+}
+.hanzo {
+  background-image:url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/5 - TIsQJXX.png");
+  background-repeat:no-repeat;
+}
+.lucio {
+  background-image:url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/7 - lCZ2f19.png");
+  background-repeat:no-repeat;
+}
+.rein {
+background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/13 - WaL3PoU.png");
+background-repeat:no-repeat;
+}
+.pharah {
+background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/11 - dWwTr4d.png");
+background-repeat:no-repeat;
+}
+.tracer{
+background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/19 - BK6rP59.png");
+background-repeat:no-repeat;
+}
+.soldier{
+background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/15 - Os6JKEv.png");
+background-repeat:no-repeat;
+}
+.mcree{
+background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/8 - gbuTfFL.png");
+background-repeat:no-repeat;
 }
 .back {
-  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/images/node-logo.png");
+  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/main assets/back logo/overwatch-logo-3.gif");
   background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 15px;
+  top: 0;
 }
-.front, .back {
-  background-size: contain;
+.front, .back , .bastion, .html{
+  background-size: cover;
+  background-position: center;
   height: 100%;
-  width: auto;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.border:hover
+{
+        box-shadow: inset 0 0 0 25px #53a7ea;
 }
 .hidden {
   display: none;
 }
-/*.flex-container, .front {
-  background-image: url(/Users/Ziyaad/lfz/memory_match/assets/images/lfz-card.jpg);
-  background-color: lightblue;
-}
-
-.flex-container, .back {
-  background-image: url(/Users/Ziyaad/lfz/memory_match/assets/images/lfz-background.jpg);
-  background-color: lightcoral;
-}*/
