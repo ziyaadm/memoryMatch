@@ -52,8 +52,8 @@ text-transform: lowercase;
   margin: 0px;
 }
 .statsTitle{
-  padding:20px;
   text-align: center;
+  margin-bottom: 5vh;
 }
 .statsContainer {
   margin: 10px;
@@ -151,4 +151,12 @@ background-repeat:no-repeat;
 }
 .hidden {
   display: none;
+}
+@media screen and (max-width: 600px) {
+  .statsContainer {
+  display: none;
+}
+.header {
+  width: auto;
+}
 }
