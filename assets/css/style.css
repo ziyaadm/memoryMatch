@@ -10,7 +10,7 @@ body{
   text-align: center;
   margin: auto;
   width: auto;
-  background: black url("/Users/Ziyaad/lfz/memory_match/assets/main assets/overwatch naslov.png") center no-repeat;
+  background: black url("/assets/images/header.png") center no-repeat;
 }
 #demoFont {
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -81,7 +81,7 @@ text-transform: lowercase;
   width: 50%;
   height:50%;
   background-image: url(
-  "/Users/Ziyaad/lfz/memory_match/assets/main assets/victory.gif");
+  "/assets/images/victory.gif");
   background-repeat: no-repeat;
   background-position: center;
   margin: auto;
@@ -93,43 +93,43 @@ text-transform: lowercase;
   font-weight: bold;
 }
 .bastion{
-  background-image: url("/assets/Overwatch Heroes/10\ -\ 7b4kGAh.png");
+  background-image: url("/assets/images/bastion.png");
   background-repeat: no-repeat;
 }
 .genji {
-  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/4 - TNssuue.png");
+  background-image: url("/assets/images/genji.png");
   background-repeat: no-repeat;
 }
 .hanzo {
-  background-image:url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/5 - TIsQJXX.png");
+  background-image:url("/assets/images/hanzo.png");
   background-repeat:no-repeat;
 }
 .lucio {
-  background-image:url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/7 - lCZ2f19.png");
+  background-image:url("/assets/images/lucio.png");
   background-repeat:no-repeat;
 }
 .rein {
-background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/13 - WaL3PoU.png");
+background-image: url("/assets/images/reinhardt.png");
 background-repeat:no-repeat;
 }
 .pharah {
-background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/11 - dWwTr4d.png");
+background-image: url("/assets/images/pharah.png");
 background-repeat:no-repeat;
 }
 .tracer{
-background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/19 - BK6rP59.png");
+background-image: url("/assets/images/tracer.png");
 background-repeat:no-repeat;
 }
 .soldier{
-background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/15 - Os6JKEv.png");
+background-image: url("/assets/images/soldier76.png");
 background-repeat:no-repeat;
 }
 .mcree{
-background-image: url("/Users/Ziyaad/lfz/memory_match/assets/Overwatch Heroes/8 - gbuTfFL.png");
+background-image: url("/assets/images/mccree.png");
 background-repeat:no-repeat;
 }
 .back {
-  background-image: url("/Users/Ziyaad/lfz/memory_match/assets/main assets/back logo/overwatch-logo-3.gif");
+  background-image: url("/assets/images/logo.gif");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
