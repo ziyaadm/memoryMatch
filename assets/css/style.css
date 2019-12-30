@@ -1,5 +1,5 @@
 body{
-  background-image: url("/assets/images/numbani.jpg");
+  background-image: url("../images/numbani.jpg");
   background-repeat: no-repeat;
   background-size:cover;
 }
@@ -10,7 +10,8 @@ body{
   text-align: center;
   margin: auto;
   width: auto;
-  background: black url("/assets/images/header.png") center no-repeat;
+  background: black url("../images/header.png") center no-repeat;
+  background-size: contain;
 }
 #demoFont {
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
