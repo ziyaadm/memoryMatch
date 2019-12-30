@@ -152,20 +152,32 @@ background-repeat:no-repeat;
 .hidden {
   display: none;
 }
-/* @media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .statsContainer {
-    width: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    font-size: 20px;
+    height: 3rem;
+    align-items: center;
+  }
+  .played, .playedNum, .attempts, .attemptNum, .accuracy, .accuracyNum{
+    margin-right: 5px;
+  }
+  .statsInfo{
+    display:flex;
+    margin-top: 15px;
   }
   .statsTitle{
+    padding:20px;
     margin:0;
-    padding:0;
   }
   .flex-container{
     flex-direction: column;
   }
   .game{
     flex-direction: column;
+    height: 80vh;
+    padding:10px;
   }
-} */
+}
