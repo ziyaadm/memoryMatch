@@ -11,7 +11,6 @@ body{
   margin: auto;
   width: auto;
   background: black url("../images/header.png") center no-repeat;
-  background-size: contain;
 }
 #demoFont {
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -179,5 +178,8 @@ background-repeat:no-repeat;
     flex-direction: column;
     height: 80vh;
     padding:10px;
+  }
+  .header {
+    background-size: contain;
   }
 }
