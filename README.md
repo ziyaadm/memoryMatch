@@ -20,7 +20,7 @@ Try the application live at http://memorymatch.ziyaadcodes.com/
 - User can see # of matches.
 
 ### Preview
-
+![](preview.gif)
 
 #### Getting Started
 Clone the Repository
