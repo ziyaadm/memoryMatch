@@ -16,7 +16,7 @@ function initializeApp(){
   $(".cards").on("click", handleCardClick);
 }
 function calculateAccuracy(){
-accuracy = Math.floor((matches / attempts) * 100);
+accuracy = Math.floor((matches / attempts) * 100) + "%";
 displayStats();
 //return accuracy;
 }
