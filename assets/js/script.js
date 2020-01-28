@@ -5,7 +5,7 @@ var secondCardClicked = null;
 var matches = 0;
 var firstCardBack = null;
 var secondCardBack = null;
-var max_matches = 2;
+var max_matches = 9;
 var modal = null;
 var attempts = 0;
 var games_played = 0;
@@ -17,7 +17,6 @@ function initializeApp(){
 }
 function calculateAccuracy(){
 accuracy = Math.floor((matches / attempts) * 100);
-console.log(accuracy);
 displayStats();
 //return accuracy;
 }
@@ -42,20 +41,16 @@ function handleCardClick(event){
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
     firstCardBack = $(event.currentTarget).find(".back");
-    console.log("first card clicked",firstCardClicked);
     displayStats();
   }else {
     secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
     secondCardBack = $(event.currentTarget).find(".back");
-    console.log("second card clicked",secondCardClicked);
     attempts++;
-    console.log(attempts);
     calculateAccuracy();
     $(".cards").off("click");
   }
 
   if(firstCardClicked === secondCardClicked){
-    console.log("card match");
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
