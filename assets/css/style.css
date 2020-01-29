@@ -62,29 +62,26 @@ text-transform: lowercase;
   width: 10%;
 }
 .modal{
-   width: 50vh;
-   height: 50vh;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   margin-left: -150px;
-   margin-top: -150px;
-   z-index: 1;
-   background-color: black;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content{
-  position: relative;
-  width: 100vh;
-  height: 100vh;
-  justify-content: center;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  width: 50%;
-  height:50%;
-  background-image: url(
-  "/assets/images/victory.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: auto;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .close-button{
   float: right;
@@ -152,7 +149,7 @@ background-repeat:no-repeat;
 .hidden {
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .statsContainer {
     margin: 0;
     padding: 0;
