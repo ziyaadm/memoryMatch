@@ -184,7 +184,7 @@ background-repeat:no-repeat;
   }
 }
 
-@media (max-height: 600px) {
+@media (min-height: 600px) {
   body{
     overflow: hidden;
   }
