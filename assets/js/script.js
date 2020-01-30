@@ -38,7 +38,7 @@ function handleCardClick(event){
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
 
-  if(!$(event.currentTarget.hasClass("hidden"))){
+  if (!$(firstCardBack).hasClass("hidden") || (!$(secondCardBack).hasClass("hidden"))){
     return;
   } else if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
