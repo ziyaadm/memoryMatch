@@ -53,8 +53,8 @@ function handleCardClick(event){
   if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardBack).addClass("matched");
-    $(secondCardBack).addClass("matched");
+    $(firstCardClicked).addClass("matched");
+    $(secondCardClicked).addClass("matched");
     matches++;
     $(".cards").on("click", handleCardClick);
     $(".matched").off("click");
