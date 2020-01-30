@@ -183,3 +183,38 @@ background-repeat:no-repeat;
     background-size: contain;
   }
 }
+
+@media (max-height: 600px) {
+  body{
+    overflow: hidden;
+  }
+  .statsContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 20px;
+    height: 3rem;
+    align-items: center;
+  }
+  .played, .playedNum, .attempts, .attemptNum, .accuracy, .accuracyNum{
+    margin-right: 5px;
+  }
+  .statsInfo{
+    display:flex;
+  }
+  .statsTitle{
+    padding:20px;
+    margin:0;
+  }
+  .flex-container{
+    flex-direction: column;
+  }
+  .game{
+    flex-direction: column;
+    height: 70vh;
+    padding:10px;
+  }
+  .header {
+    background-size: contain;
+  }
+}
