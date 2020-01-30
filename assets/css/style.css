@@ -184,7 +184,10 @@ background-repeat:no-repeat;
   }
 }
 
-@media (min-height: 600px) {
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape) {
   body{
     overflow: hidden;
   }
