@@ -37,6 +37,7 @@ function resetStats(){
 function handleCardClick(event){
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
+  $(".matched").off("click");
 
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
@@ -53,10 +54,11 @@ function handleCardClick(event){
   if (firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardClicked).addClass("matched");
-    $(secondCardClicked).addClass("matched");
     matches++;
+    $(firstCardBack).addClass("matched");
+    $(secondCardBack).addClass("matched");
     $(".cards").on("click", handleCardClick);
+    $(".matched").off("click");
     calculateAccuracy();
     if (matches === max_matches) {
       games_played++
@@ -72,6 +74,7 @@ function handleCardClick(event){
       $(firstCardBack).removeClass("hidden");
       $(secondCardBack).removeClass("hidden");
       $(".cards").on("click", handleCardClick);
+      $(".matched").off("click");
     }, 1500);
     firstCardClicked = null;
     secondCardClicked = null;
