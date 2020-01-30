@@ -26,9 +26,9 @@ $(".attemptNum").text(attempts);
 $(".accuracyNum").text(accuracy);
 }
 function resetStats(){
-  matches = null;
-  attempts = null;
-  accuracy = null;
+  matches = 0;
+  attempts = 0;
+  accuracy = 0 + "%";
   games_played++;
   displayStats();
   $(modal).addClass("hidden");
