@@ -13,21 +13,21 @@ var accuracy = 0;
 var firstCardFront = null;
 var secondCardFront = null;
 
-function initializeApp(){
+function initializeApp() {
   modal = $(".modal")
   $(".cards").on("click", handleCardClick);
 }
-function calculateAccuracy(){
-accuracy = Math.floor((matches / attempts) * 100) + "%";
-displayStats();
-//return accuracy;
+function calculateAccuracy() {
+  accuracy = Math.floor((matches / attempts) * 100) + "%";
+  displayStats();
+  //return accuracy;
 }
-function displayStats(){
-$(".playedNum").text(games_played);
-$(".attemptNum").text(attempts);
-$(".accuracyNum").text(accuracy);
+function displayStats() {
+  $(".playedNum").text(games_played);
+  $(".attemptNum").text(attempts);
+  $(".accuracyNum").text(accuracy);
 }
-function resetStats(){
+function resetStats() {
   matches = 0;
   attempts = 0;
   accuracy = 0 + "%";
@@ -36,16 +36,16 @@ function resetStats(){
   $(modal).addClass("hidden");
   $(".back").removeClass("hidden");
 }
-function handleCardClick(event){
+function handleCardClick(event) {
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
 
-  if (firstCardClicked === null){
+  if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
     firstCardFront = $(event.currentTarget).find(".front");
     firstCardBack = $(event.currentTarget).find(".back");
     displayStats();
-  }else {
+  } else {
     secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
     secondCardFront = $(event.currentTarget).find(".front");
     secondCardBack = $(event.currentTarget).find(".back");
@@ -54,13 +54,11 @@ function handleCardClick(event){
     $(".cards").off("click");
   }
 
-  if(firstCardClicked === secondCardClicked){
+  if (firstCardClicked === secondCardClicked) {
     $(firstCardFront).removeClass("unmatched");
     $(secondCardFront).removeClass("unmatched");
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardBack).removeClass("unmatched");
-    $(secondCardBack).removeClass("unmatched");
     matches++;
     $(".unmatched").on("click", handleCardClick);
     calculateAccuracy();
@@ -69,20 +67,20 @@ function handleCardClick(event){
       displayStats();
       $(modal).removeClass("hidden");
       $("#resetButton").on("click", resetStats);
-      }
-}  else if (firstCardClicked === null || secondCardClicked === null) {
+    }
+  } else if (firstCardClicked === null || secondCardClicked === null) {
     return;
-}  else if (firstCardClicked !== secondCardClicked){
+  } else if (firstCardClicked !== secondCardClicked) {
     calculateAccuracy();
-    setTimeout(function(){
+    setTimeout(function () {
       $(firstCardBack).removeClass("hidden");
       $(secondCardBack).removeClass("hidden");
       $(".cards").on("click", handleCardClick);
     }, 1500);
     firstCardClicked = null;
     secondCardClicked = null;
-    }
-    else if (firstCardClicked === firstCardClicked){
-      return;
-    }
   }
+  else if (firstCardClicked === firstCardClicked) {
+    return;
+  }
+}
