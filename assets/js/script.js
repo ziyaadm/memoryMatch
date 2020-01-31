@@ -42,12 +42,12 @@ function handleCardClick(event) {
 
   if (firstCardClicked === null) {
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
-    firstCardFront = $(event.currentTarget).find(".front");
+    firstCardFront = $(event.currentTarget).find(".unmatched");
     firstCardBack = $(event.currentTarget).find(".back");
     displayStats();
   } else {
     secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
-    secondCardFront = $(event.currentTarget).find(".front");
+    secondCardFront = $(event.currentTarget).find(".unmatched");
     secondCardBack = $(event.currentTarget).find(".back");
     attempts++;
     calculateAccuracy();
