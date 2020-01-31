@@ -53,8 +53,10 @@ function handleCardClick(event){
   if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
+    $(firstCardBack).removeClass("unmatched");
+    $(secondCardBack).removeClass("unmatched");
     matches++;
-    $(".cards").on("click", handleCardClick);
+    $(".unmatched").on("click", handleCardClick);
     calculateAccuracy();
     if (matches === max_matches) {
       games_played++
