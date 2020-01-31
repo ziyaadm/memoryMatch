@@ -59,6 +59,8 @@ function handleCardClick(event){
     $(secondCardFront).removeClass("unmatched");
     firstCardClicked = null;
     secondCardClicked = null;
+    $(firstCardBack).removeClass("unmatched");
+    $(secondCardBack).removeClass("unmatched");
     matches++;
     $(".unmatched").on("click", handleCardClick);
     calculateAccuracy();
