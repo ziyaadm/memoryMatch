@@ -10,6 +10,8 @@ var modal = null;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var firstCardFront = null;
+var secondCardFront = null;
 
 function initializeApp(){
   modal = $(".modal")
