@@ -50,14 +50,13 @@ function handleCardClick(event){
     $(".cards").off("click");
   }
 
-  if($(this).find(".matched")){
-    return;
-  } else if(firstCardClicked === secondCardClicked){
+  if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
     $(".cards").on("click", handleCardClick);
-    $(this).addClass("matched");
+    $(firstCardBack).addClass("matched");
+    $(secondCardBack).addClass("matched");
     console.log("matched");
     calculateAccuracy();
     if (matches === max_matches) {
