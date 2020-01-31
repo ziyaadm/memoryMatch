@@ -51,15 +51,17 @@ function handleCardClick(event){
   }
 
   if(firstCardClicked === secondCardClicked){
-    if($(firstCardBack).hasClass("matched") || $(secondCardBack).hasClass("matched")){
-      return;
-    }
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
-    $(".cards").on("click", handleCardClick);
-    $(firstCardBack).addClass("matched");
-    $(secondCardBack).addClass("matched");
+    console.log(firstCardClicked);
+    console.log(event.currentTarget);
+    console.log(event);
+    console.log(firstCardBack);
+    // $(firstCardBack).removeClass("unmatched");
+    // $(secondCardBack).removeClass("unmatched");
+    // $(".unmatched").on("click", handleCardClick);
+    // $(".matched").off();
     console.log("matched");
     calculateAccuracy();
     if (matches === max_matches) {
