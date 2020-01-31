@@ -10,6 +10,8 @@ var modal = null;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var firstCardFront = null;
+var secondCardFront = null;
 
 function initializeApp(){
   modal = $(".modal")
@@ -36,14 +38,16 @@ function resetStats(){
 }
 function handleCardClick(event){
   displayStats();
-  $(event.currentTarget).find(".back").addClass("hidden disabled");
+  $(event.currentTarget).find(".back").addClass("hidden");
 
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
+    firstCardFront = $(event.currentTarget).find(".cards");
     firstCardBack = $(event.currentTarget).find(".back");
     displayStats();
   }else {
     secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
+    secondCardFront = $(event.currentTarget).find(".cards");
     secondCardBack = $(event.currentTarget).find(".back");
     attempts++;
     calculateAccuracy();
@@ -51,6 +55,8 @@ function handleCardClick(event){
   }
 
   if(firstCardClicked === secondCardClicked){
+    $(firstCardFront).removeClass(".cards");
+    $(secondCardFront).removeClass(".cards");
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
@@ -67,8 +73,8 @@ function handleCardClick(event){
 }  else if (firstCardClicked !== secondCardClicked){
     calculateAccuracy();
     setTimeout(function(){
-      $(firstCardBack).removeClass("hidden disabled");
-      $(secondCardBack).removeClass("hidden disabled");
+      $(firstCardBack).removeClass("hidden");
+      $(secondCardBack).removeClass("hidden");
       $(".cards").on("click", handleCardClick);
     }, 1500);
     firstCardClicked = null;
