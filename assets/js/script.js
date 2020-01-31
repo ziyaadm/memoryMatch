@@ -10,6 +10,7 @@ var modal = null;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var clickable = true;
 
 function initializeApp(){
   modal = $(".modal")
@@ -36,8 +37,9 @@ function resetStats(){
 }
 function handleCardClick(event){
   displayStats();
-  $(event.currentTarget).find(".back").addClass("hidden matched unmatched");
+  $(event.currentTarget).find(".back").addClass("hidden");
 
+  if(clickable === true) {
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
     firstCardBack = $(event.currentTarget).find(".back");
@@ -53,10 +55,9 @@ function handleCardClick(event){
   if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardBack).removeClass("matched");
-    $(secondCardBack).removeClass("matched");
+    clickable = false;
     matches++;
-    $(".unmatched").on("click", handleCardClick);
+    $(".cards").on("click", handleCardClick);
     calculateAccuracy();
     if (matches === max_matches) {
       games_played++
@@ -79,4 +80,5 @@ function handleCardClick(event){
     else if (firstCardClicked === firstCardClicked){
       return;
     }
+  }
   }
