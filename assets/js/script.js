@@ -37,6 +37,7 @@ function resetStats(){
 function handleCardClick(event){
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
+  $(".matched").off("click");
 
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
@@ -57,7 +58,6 @@ function handleCardClick(event){
     $(secondCardClicked).addClass("matched");
     matches++;
     $(".cards").on("click", handleCardClick);
-    $(".matched").off("click");
     calculateAccuracy();
     if (matches === max_matches) {
       games_played++
