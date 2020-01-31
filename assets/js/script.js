@@ -54,8 +54,8 @@ function handleCardClick(event){
   if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardClicked).addClass("matched");
-    $(secondCardClicked).addClass("matched");
+    $(firstCardClicked).find(".front").addClass("matched");
+    $(secondCardClicked).find(".front").addClass("matched");
     matches++;
     $(".cards").on("click", handleCardClick);
     calculateAccuracy();
