@@ -77,4 +77,11 @@ function handleCardClick(event){
     else if (firstCardClicked === firstCardClicked){
       return;
     }
+    else {
+    secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
+    secondCardBack = $(event.currentTarget).find(".back");
+    $(".cards").off("click");
+    calculateAccuracy();
+    attempts++;
+  }
   }
