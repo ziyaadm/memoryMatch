@@ -74,6 +74,7 @@ function handleCardClick(event){
       $(secondCardBack).removeClass("hidden");
       $(".cards").on("click", handleCardClick);
     }, 1500);
+    clickable = false;
     firstCardClicked = null;
     secondCardClicked = null;
     }
