@@ -37,7 +37,7 @@ function resetStats(){
 function handleCardClick(event){
   displayStats();
   $(event.currentTarget).find(".back").addClass("hidden");
-  $(".matched").off("click");
+  $(".matched").off();
 
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
@@ -54,8 +54,8 @@ function handleCardClick(event){
   if(firstCardClicked === secondCardClicked){
     firstCardClicked = null;
     secondCardClicked = null;
-    $(firstCardClicked).find(".front").addClass("matched");
-    $(secondCardClicked).find(".front").addClass("matched");
+    $(firstCardClicked).addClass("matched");
+    $(secondCardClicked).addClass("matched");
     matches++;
     $(".cards").on("click", handleCardClick);
     calculateAccuracy();
