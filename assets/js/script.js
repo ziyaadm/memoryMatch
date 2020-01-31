@@ -50,7 +50,7 @@ function handleCardClick(event){
     $(".cards").off("click");
   }
 
-  if($(this)).find(".matched"){
+  if($(this).find(".matched")){
     return;
   }
   if(firstCardClicked === secondCardClicked){
