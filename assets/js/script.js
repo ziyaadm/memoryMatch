@@ -51,6 +51,9 @@ function handleCardClick(event){
   }
 
   if(firstCardClicked === secondCardClicked){
+    if($(firstCardBack).hasClass("matched") || $(secondCardBack).hasClass("matched")){
+      return;
+    }
     firstCardClicked = null;
     secondCardClicked = null;
     matches++;
