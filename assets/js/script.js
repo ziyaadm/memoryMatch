@@ -1,86 +1,97 @@
-$(document).ready(initializeApp);
-
 var firstCardClicked = null;
 var secondCardClicked = null;
-var matches = 0;
-var firstCardBack = null;
-var secondCardBack = null;
+var matches = null;
+var attempts = null;
 var max_matches = 9;
-var modal = null;
-var attempts = 0;
-var games_played = 0;
-var accuracy = 0;
-var firstCardFront = null;
-var secondCardFront = null;
+var games_played = null;
+var calculate = null;
+var clickable = true; //set up to limit the clicks from player
+var name = null;
 
-function initializeApp(){
-  modal = $(".modal")
-  $(".cards").on("click", handleCardClick);
-}
-function calculateAccuracy(){
-accuracy = Math.floor((matches / attempts) * 100) + "%";
-displayStats();
-//return accuracy;
-}
-function displayStats(){
-$(".playedNum").text(games_played);
-$(".attemptNum").text(attempts);
-$(".accuracyNum").text(accuracy);
-}
-function resetStats(){
-  matches = 0;
-  attempts = 0;
-  accuracy = 0 + "%";
-  games_played++;
-  displayStats();
-  $(modal).addClass("hidden");
-  $(".back").removeClass("hidden");
-}
-function handleCardClick(event){
-  displayStats();
-  $(event.currentTarget).find(".back").addClass("hidden");
 
-  if (firstCardClicked === null){
-    firstCardClicked = $(event.currentTarget).find(".front").css("background-image");
-    firstCardFront = $(event.currentTarget).find(".cards");
-    firstCardBack = $(event.currentTarget).find(".back");
-    displayStats();
-  }else {
-    secondCardClicked = $(event.currentTarget).find(".front").css("background-image");
-    secondCardFront = $(event.currentTarget).find(".cards");
-    secondCardBack = $(event.currentTarget).find(".back");
-    attempts++;
-    calculateAccuracy();
-    $(".cards").off("click");
-  }
+$(document).ready(function () {
+  initializeApp();
+});
 
-  if(firstCardClicked === secondCardClicked){
-    $(firstCardFront).removeClass(".cards");
-    $(secondCardFront).removeClass(".cards");
-    firstCardClicked = null;
-    secondCardClicked = null;
-    matches++;
-    $(".cards").on("click", handleCardClick);
-    calculateAccuracy();
-    if (matches === max_matches) {
-      games_played++
-      displayStats();
-      $(modal).removeClass("hidden");
-      $("#resetButton").on("click", resetStats);
+
+
+function initializeApp() {
+  var backCard = $(".back");
+  backCard.on("click", handleCardClick);
+}
+
+
+
+function handleCardClick(event) {
+  if (clickable === true) { //set up to limit the clicks from player
+
+    $(event.currentTarget).addClass("hidden");
+
+    if (firstCardClicked === null) {
+      firstCardClicked = $(event.currentTarget);
+
+    }
+    else {
+      secondCardClicked = $(event.currentTarget);
+
+      var front1 = firstCardClicked.next().css("background-image");
+
+      var front2 = secondCardClicked.next().css("background-image");
+
+
+
+      if (front1 === front2) //win condition
+      {
+        matches++;
+
+        firstCardClicked = null;
+        secondCardClicked = null;
+        clickable = false; //set up to limit the clicks from player
+
+        displayStats();
+
       }
-}  else if (firstCardClicked === null || secondCardClicked === null) {
-    return;
-}  else if (firstCardClicked !== secondCardClicked){
-    calculateAccuracy();
-    setTimeout(function(){
-      $(firstCardBack).removeClass("hidden");
-      $(secondCardBack).removeClass("hidden");
-      $(".cards").on("click", handleCardClick);
-    }, 1500);
-    firstCardClicked = null;
-    secondCardClicked = null;
+
+      else { // wrong condition
+
+        setTimeout(function () {
+
+          firstCardClicked.removeClass("hidden");
+          secondCardClicked.removeClass("hidden");
+          firstCardClicked = null;
+          secondCardClicked = null;
+
+        }, 500);
+
+        clickable = false; //set up to limit the clicks from player
+
+        displayStats();
+
+      }
+
     }
-    else if (firstCardClicked === firstCardClicked){
-      return;
-    }
+
+    setTimeout(function () {
+      clickable = true;
+    }, 1200); //let the player can click again
   }
+}
+
+
+function resetStats() {
+  displayStats();
+
+  $(event.currentTarget).removeClass("hidden");
+
+}
+
+function displayStats() {
+  attempts++;
+  $(".attempts").text(attempts);
+  calculateAccuracy();
+}
+
+function calculateAccuracy() {
+  calculate = Math.round(matches / attempts * 100);
+  $(".accuracy").text(calculate + "%");
+}
