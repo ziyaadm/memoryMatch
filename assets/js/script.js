@@ -55,9 +55,9 @@ function handleCardClick(event){
     secondCardClicked = null;
     matches++;
     console.log(firstCardClicked);
-    console.log(event.currentTarget);
-    console.log(event);
+    console.log(secondCardClicked)
     console.log(firstCardBack);
+    console.log(secondCardBack);
     // $(firstCardBack).removeClass("unmatched");
     // $(secondCardBack).removeClass("unmatched");
     // $(".unmatched").on("click", handleCardClick);
