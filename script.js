@@ -6,7 +6,7 @@ let firstCard, secondCard;
 let attempts = 0;
 let accuracy = 0;
 let matches = 0;
-let max_matches = 2;
+let max_matches = 9;
 let games_played = 0;
 
 function flipCard() {
