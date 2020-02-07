@@ -3,113 +3,125 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OverWatch Memory Match</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="assets/js/script.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel='icon' href='assets/images/logo.gif'>
+
+  <title>OverWatch Memory Match Game</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel='icon' href='img/favicon.png'>
 </head>
 
 <body>
-  <div class="modal hidden center">
-    <div class="modal-content center">
+  <div class="modal hidden">
+    <div class="modal-content">
       <h1>You won!</h1>
-      <button id = "resetButton">Reset Game</button>
+      <button class="resetButton">Reset Game</button>
     </div>
-
-
   </div>
-  <header class="header"></header>
-  <main>
-    <div class="flex-container" id="demoFont">
-      <aside class="statsContainer">
-        <div class="statsTitle" id="demoFont"><u>STATS</u></div>
-        <div class="statsInfo">
-          <div class="played">Games</div>
-          <div class = "playedNum">0</div>
-          <div class="attempts">Attempts</div>
-          <div class = "attemptNum">0</div>
-          <div class="accuracy">Accuracy</div>
-          <div class = "accuracyNum">0%</div>
-        </div>
-      </aside>
-      <div class="game">
-          <div class="cards unmatched">
-            <div class="front genji"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front bastion"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front hanzo"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front rein"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front tracer"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front soldier"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front mcree"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front pharah"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front lucio"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front soldier"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front bastion"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front lucio"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front genji"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front rein"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front mcree"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front pharah"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front tracer"></div>
-            <div class="back border"></div>
-          </div>
-          <div class="cards unmatched">
-            <div class="front hanzo"></div>
-            <div class="back border"></div>
-          </div>
-        </div>
-  </main>
+
+  <header class="header">
+    <img src="img/header.png" alt="" class="header">
+  </header>
+
+  <div class="flex-container">
+    <div class="statsContainer" id="font">
+      <div class="statsTitle"><u>STATS</u></div>
+      <div class="statsInfo">
+        <div class="played">Games</div>
+        <div class="playedNum">0</div>
+        <div class="attempts">Attempts</div>
+        <div class="attemptNum">0</div>
+        <div class="accuracy">Accuracy</div>
+        <div class="accuracyNum">0%</div>
+      </div>
+    </div>
+    <section class="memory-game">
+      <div class="memory-card" data-framework="junkrat">
+        <img class="front-face" src="img/junkrat.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="junkrat">
+        <img class="front-face" src="img/junkrat.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="lucio">
+        <img class="front-face" src="img/lucio.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="lucio">
+        <img class="front-face" src="img/lucio.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="mei">
+        <img class="front-face" src="img/mei.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="mei">
+        <img class="front-face" src="img/mei.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+      <div class="memory-card" data-framework="tracer">
+        <img class="front-face" src="img/tracer.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="tracer">
+        <img class="front-face" src="img/tracer.png" alt="React">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="dva">
+        <img class="front-face" src="img/dva.png" alt="Angular">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="dva">
+        <img class="front-face" src="img/dva.png" alt="Angular">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="genji">
+        <img class="front-face" src="img/genji.png" alt="Ember">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="genji">
+        <img class="front-face" src="img/genji.png" alt="Ember">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="reinhardt">
+        <img class="front-face" src="img/reinhardt.png" alt="Vue">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="reinhardt">
+        <img class="front-face" src="img/reinhardt.png" alt="Vue">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="roadhog">
+        <img class="front-face" src="img/roadhog.png" alt="Backbone">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="roadhog">
+        <img class="front-face" src="img/roadhog.png" alt="Backbone">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="mercy">
+        <img class="front-face" src="img/mercy.png" alt="Aurelia">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+
+      <div class="memory-card" data-framework="mercy">
+        <img class="front-face" src="img/mercy.png" alt="Aurelia">
+        <img class="back-face" src="img/logo.gif" alt="Memory Card">
+      </div>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>

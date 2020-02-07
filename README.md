@@ -10,14 +10,14 @@ Try the application live at http://memorymatch.ziyaadcodes.com/
   - HTML5
   - CSS3
   - JavaScript
-  - jQuery
   - AWS EC2
 
 ### Features
 - User can play a game of memory match.
-- User can see # of games layed.
+- User can see # of games played.
 - User can see # of attempts.
 - User can see # of matches.
+- Cards are dynamically shuffled.
 
 ### Preview
 ![](preview.gif)
